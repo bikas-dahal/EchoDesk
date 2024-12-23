@@ -25,6 +25,7 @@ export default withUt({
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))',
 				dark: '#251c49',
+				light: '#c11141'
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
@@ -60,5 +61,5 @@ export default withUt({
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-typography")],
 }) satisfies Config;

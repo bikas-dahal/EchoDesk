@@ -10,8 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Typography from '@/components/ui/typography';
 import { useCreateWorkspaceValues } from '@/hooks/create-workspace-values';
-import { createWorkspace } from '@/actions/create-workspace';
+import { createWorkspace } from '@/actions/workspace/create-workspace';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 const CreateWorkspace = () => {
   const { currentStep } = useCreateWorkspaceValues();
@@ -99,11 +100,12 @@ const Step2 = () => {
     // console.log('data', imageUrl, name, slug, invite_code);
     const error = await createWorkspace({ imageUrl, name, slug, invite_code });
     setIsSubmitting(false);
-    // if (error?.) {
-    //   console.log(error);
-    //   return toast.error("Couldn't create workspace. Please try again.");
-    // }
-    // toast.success('Workspace created successfully');
+
+    if (error?.error) {
+      console.log(error);
+      return toast.error("Couldn't create workspace. Please try again.");
+    }
+    toast.success('Workspace created successfully');
     router.push('/');
   };
 

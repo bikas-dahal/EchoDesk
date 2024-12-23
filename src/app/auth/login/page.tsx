@@ -1,6 +1,6 @@
 'use client'
 
-import { registerWithEmail } from '@/actions/register-with-email'
+import { registerWithEmail } from '@/actions/auth/register-with-email'
 import { Button } from '@/components/ui/button'
 import { Form, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
@@ -79,7 +79,7 @@ const LoginPage = () => {
   return (
     <div className='min-h-screen bg-slate-400'>
         <div className='flex flex-col space-y-5 items-center justify-center p-5'>
-            <Typography variant='h1' text='Slacks' />
+            <Typography variant='h1' text='EchoDesk' />
             <div className='flex flex-col space-y-5'>
                 <Button disabled={authenticating} onClick={() => onSocialAuth('google')} variant={'outline'}> <FaGoogle size={13} /> Login with Google</Button>
                 {/* <Button variant={'outline'}> <Mail size={13} /> Login with Mail</Button> */}

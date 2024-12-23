@@ -1,4 +1,4 @@
-import { getUserData } from "@/actions/get-user-data";
+import { getUserData } from "@/actions/auth/get-user-data";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 

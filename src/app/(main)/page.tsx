@@ -1,4 +1,4 @@
-import { getUserData } from "@/actions/get-user-data";
+import { getUserData } from "@/actions/auth/get-user-data";
 
 import { redirect } from "next/navigation";
 
@@ -15,7 +15,7 @@ export default async function Home() {
   const userWorkspaceId = userData?.workspaces?.[0]
 
 
-  console.log('userWorkspaceId', userWorkspaceId)
+  // console.log('userWorkspaceId', userWorkspaceId)
 
   if (!userWorkspaceId) return redirect('/create-workspace')
 

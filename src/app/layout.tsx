@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lato } from "next/font/google";
 import '@/styles/globals.css';
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +19,11 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "Slackin",
-  description: "Slackin is a community of developers, designers, and creators.",
+  title: "EchoDesk",
+  description: "EchoDesk is a community of developers, designers, and creators.",
 };
+
+export const revalidate = 0
 
 export default function RootLayout({
   children,
@@ -32,7 +35,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${lato.className} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Toaster />
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
